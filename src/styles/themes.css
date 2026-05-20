@@ -1,0 +1,43 @@
+/* Theme: amber — warm retro CRT */
+[data-theme="amber"] {
+  --t-main: #FFB347;
+  --t-glow: rgba(255, 179, 71, 0.25);
+}
+
+[data-theme="amber"] .text-terminal-green,
+[data-theme="amber"] .text-glow-green {
+  color: var(--t-main);
+  text-shadow: 0 0 6px var(--t-glow);
+}
+
+[data-theme="amber"] .caret-terminal-green {
+  caret-color: var(--t-main);
+}
+
+[data-theme="amber"] .katex {
+  color: #E8A040;
+}
+
+/* Theme: white — clean monochrome */
+[data-theme="white"] {
+  --t-main: #D4D4D4;
+  --t-glow: none;
+}
+
+[data-theme="white"] .text-terminal-green,
+[data-theme="white"] .text-glow-green {
+  color: var(--t-main);
+  text-shadow: none;
+}
+
+[data-theme="white"] .caret-terminal-green {
+  caret-color: var(--t-main);
+}
+
+[data-theme="white"] .text-terminal-cyan {
+  color: #9CDCFE;
+}
+
+[data-theme="white"] .katex {
+  color: #C586C0;
+}

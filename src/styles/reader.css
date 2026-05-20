@@ -1,0 +1,22 @@
+/* Reader mode — clean, no terminal effects */
+.reader-mode .markdown-body h1,
+.reader-mode .markdown-body h2,
+.reader-mode .markdown-body h3 {
+  color: #E0E0E0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+}
+
+.reader-mode .markdown-body {
+  color: #D4D4D4;
+}
+
+.reader-mode .katex {
+  color: #C586C0;
+}
+
+.reader-mode .text-terminal-cyan  { color: #9CDCFE !important; }
+.reader-mode .text-terminal-dim   { color: #888 !important; }
+.reader-mode .text-terminal-green { color: #D4D4D4 !important; text-shadow: none !important; }
+.reader-mode .text-terminal-blue  { color: #569CD6 !important; }
+.reader-mode .border-terminal-dim { border-color: #333 !important; }
