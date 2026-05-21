@@ -20,10 +20,6 @@ export const helpCmd: Command = {
     }
 
     const lines = [
-      '╔══════════════════════════════════════════════╗',
-      '║           SHELL BLOG - HELP MENU             ║',
-      '╚══════════════════════════════════════════════╝',
-      '',
       'Available commands:',
       '',
     ]
@@ -38,8 +34,7 @@ export const helpCmd: Command = {
     }
 
     lines.push('')
-    lines.push('Type "help <command>" for detailed usage.')
-    lines.push('Use ↑/↓ arrows to browse command history. Tab for autocomplete.')
+    lines.push('Use "help <command>" for more info.')
 
     return { text: lines.join('\n') }
   },

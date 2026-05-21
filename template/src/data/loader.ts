@@ -5,8 +5,6 @@ const markdownFiles = import.meta.glob('./posts/*.md', { query: '?raw', import: 
 
 const postsData: PostMeta[] = postsIndex.map(p => ({
   ...p,
-  lines: 0,
-  words: 0,
 }))
 
 const contentCache = new Map<string, string>()

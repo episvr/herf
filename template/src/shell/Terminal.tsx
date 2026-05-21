@@ -3,20 +3,7 @@ import { useTerminal, OutputLine } from './useTerminal'
 import { parseCommand } from './commandParser'
 import { commands } from './commands'
 import { getPosts } from '../data/loader'
-
-const WELCOME = [
-  '╔══════════════════════════════════════════════════════╗',
-  '║               SHELL BLOG v1.0.0                      ║',
-  '║         Terminal-style blog for developers           ║',
-  '╚══════════════════════════════════════════════════════╝',
-  '',
-  '  Type "help" to see available commands.',
-  '  Type "ls" to list blog posts.',
-  '  Type "cat <post-id>" to read a post.',
-  '',
-  '  Tips: ↑/↓ browse history | Tab autocomplete | theme <color> switch colors',
-  '',
-]
+import { config } from '../config'
 
 export function Terminal() {
   const {
@@ -144,9 +131,15 @@ export function Terminal() {
       >
         {/* Welcome message */}
         {initialized && output.length === 0 && (
-          <pre className="text-terminal-cyan whitespace-pre-wrap mb-4">
-            {WELCOME.join('\n')}
-          </pre>
+          <div className="mb-4">
+            <pre className="text-terminal-cyan whitespace-pre-wrap">
+              {config.banner}
+            </pre>
+            {config.site.description && (
+              <div className="text-terminal-dim mt-1">  {config.site.description}</div>
+            )}
+            <div className="text-terminal-dim mt-2">  {config.welcome}</div>
+          </div>
         )}
 
         {/* Command output */}
@@ -175,14 +168,15 @@ export function Terminal() {
 }
 
 function Prompt({ path }: { path: string }) {
+  const { user, symbol, showPath } = config.prompt
   return (
     <span className="flex-shrink-0 select-none">
-      <span className="text-terminal-green">user</span>
+      <span className="text-terminal-green">{user}</span>
       <span className="text-terminal-dim">@</span>
-      <span className="text-terminal-cyan">blog</span>
+      <span className="text-terminal-cyan">{config.site.name}</span>
       <span className="text-terminal-dim">:</span>
-      <span className="text-terminal-blue">{path}</span>
-      <span className="text-terminal-green">$</span>
+      {showPath && <span className="text-terminal-blue">{path}</span>}
+      <span className="text-terminal-green">{symbol}</span>
     </span>
   )
 }
