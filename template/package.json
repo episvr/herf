@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "tty-blog dev",
-    "build": "tty-blog build",
+    "dev": "herf dev",
+    "build": "herf build",
     "preview": "vite preview",
-    "new": "tty-blog new",
-    "generate": "tty-blog generate"
+    "new": "herf new",
+    "generate": "herf generate"
   },
   "dependencies": {
     "katex": "^0.16.11",

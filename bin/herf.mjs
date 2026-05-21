@@ -10,13 +10,13 @@ import { generateCommand } from '../lib/commands/generate.js'
 const program = new Command()
 
 program
-  .name('tty-blog')
+  .name('herf')
   .description('A terminal-style blog CLI tool')
   .version('0.0.1')
 
 program
   .command('init <name>')
-  .description('Initialize a new tty-blog project')
+  .description('Initialize a new herf project')
   .action(initCommand)
 
 program

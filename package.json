@@ -1,14 +1,14 @@
 {
-  "name": "tty-blog",
+  "name": "herf",
   "version": "0.0.1",
   "description": "A terminal-style blog CLI tool",
   "type": "module",
   "bin": {
-    "tty-blog": "./bin/tty-blog.mjs"
+    "herf": "./bin/herf.mjs"
   },
   "main": "./lib/index.js",
   "scripts": {
-    "test": "node bin/tty-blog.mjs --help"
+    "test": "node bin/herf.mjs --help"
   },
   "keywords": [
     "blog",
@@ -21,12 +21,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/episvr/tty-blog.git"
+    "url": "git+https://github.com/episvr/herf.git"
   },
   "bugs": {
-    "url": "https://github.com/episvr/tty-blog/issues"
+    "url": "https://github.com/episvr/herf/issues"
   },
-  "homepage": "https://github.com/episvr/tty-blog#readme",
+  "homepage": "https://github.com/episvr/herf#readme",
   "files": [
     "bin/",
     "lib/",

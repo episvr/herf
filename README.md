@@ -1,11 +1,13 @@
-# tty-blog
+# herf
 
 A terminal-style blog CLI tool. Write markdown, get a terminal-themed blog.
+
+> **Name origin:** I always typed `href` as `herf`, so I made it a feature.
 
 ## Quick Start
 
 ```bash
-npx tty-blog init my-blog
+npx herf init my-blog
 cd my-blog
 npm run dev
 ```
@@ -13,11 +15,11 @@ npm run dev
 ## Commands
 
 ```bash
-tty-blog init <name>     # Create a new blog project
-tty-blog new <title>     # Create a new post
-tty-blog dev             # Start dev server
-tty-blog build           # Build for production
-tty-blog generate        # Regenerate posts index
+herf init <name>     # Create a new blog project
+herf new <title>     # Create a new post
+herf dev             # Start dev server
+herf build           # Build for production
+herf generate        # Regenerate posts index
 ```
 
 ## Writing Posts
@@ -40,7 +42,7 @@ Content here...
 Or use the CLI:
 
 ```bash
-tty-blog new "My Post Title"
+herf new "My Post Title"
 ```
 
 ## Features
@@ -51,6 +53,8 @@ tty-blog new "My Post Title"
 - Code syntax highlighting
 - Embedded PDF slides
 - Floating window system
+- Table of Contents
+- Configurable via blog.config.ts
 
 ## License
 

@@ -1,13 +1,21 @@
 ---
-title: Welcome to tty-blog
+title: Welcome to herf
 date: 2026-05-21
 category: intro
 tags: [demo, tutorial, features]
 ---
 
-# Welcome to tty-blog
+# Welcome to herf
 
 A terminal-style blog in your browser. Every post is a "file" you interact with using shell commands.
+
+## Why "herf"?
+
+Because I always type `href` as `herf`.
+
+Every time I write an HTML link, my fingers refuse to spell it correctly. `<a herf="...">` — every single time. So instead of fighting it, I made it a feature.
+
+**herf** — the blog engine for developers who can't type `href`.
 
 ## Quick Start
 
@@ -151,13 +159,14 @@ Embed GitHub repository cards:
 
 ---
 
-## Why tty-blog?
+## Why herf?
 
 1. **Terminal Native** — If you can use a terminal, you can use this blog
 2. **Markdown First** — Write content in plain text, get beautiful output
 3. **Developer Friendly** — Code highlighting, math formulas, tables
 4. **Fast** — Built on Vite, instant hot reload
 5. **Hackable** — Open source, easy to customize
+6. **Named by Mistake** — Because `href` is hard to type
 
 ---
 
@@ -165,7 +174,7 @@ Embed GitHub repository cards:
 
 ```bash
 # Create your first post
-tty-blog new "My First Post"
+herf new "My First Post"
 
 # Start the dev server
 npm run dev
@@ -176,4 +185,4 @@ npm run build
 
 ---
 
-*Built with React, Vite, and love for the terminal.*
+*Built with React, Vite, and a typo.*
