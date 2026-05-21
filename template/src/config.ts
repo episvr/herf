@@ -6,12 +6,12 @@ const defaultConfig = {
     author: '',
   },
   banner: `
-  ██╗  ██╗███████╗██████╗ ███████╗
-  ██║  ██║██╔════╝██╔══██╗██╔════╝
-  ███████║█████╗  ██████╔╝█████╗
-  ██╔══██║██╔══╝  ██╔══██╗██╔══╝
-  ██║  ██║███████╗██║  ██║██║
-  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝`,
+  ██╗  ██╗ ███████╗ ██████╗  ███████╗
+  ██║  ██║ ██╔════╝ ██╔══██╗ ██╔════╝
+  ███████║ █████╗   ██████╔╝ █████╗
+  ██╔══██║ ██╔══╝   ██╔══██╗ ██╔══╝
+  ██║  ██║ ███████╗ ██║  ██║ ██║
+  ╚═╝  ╚═╝ ╚══════╝ ╚═╝  ╚═╝ ╚═╝`,
   welcome: 'Type "help" to get started.',
   theme: 'green',
   prompt: {
@@ -21,13 +21,20 @@ const defaultConfig = {
   },
 }
 
-// Try to import user config
+// User config loaded from blog.config.ts at build time via Vite
+// In dev mode, this will be an empty object unless blog.config.ts is imported
 let userConfig: any = {}
+
+// Vite injects import.meta.glob for lazy loading
 try {
-  const mod = await import('../blog.config.ts')
-  userConfig = mod.default || {}
+  // This will be resolved by Vite at build time
+  const modules = import.meta.glob('/blog.config.ts', { eager: true })
+  const mod = modules['/blog.config.ts'] as any
+  if (mod) {
+    userConfig = mod.default || {}
+  }
 } catch {
-  // No user config, use defaults
+  // No user config
 }
 
 export const config = {
