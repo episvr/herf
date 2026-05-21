@@ -40,6 +40,7 @@ program
 program
   .command('generate')
   .description('Generate posts.json index from markdown files')
-  .action(generateCommand)
+  .option('-f, --force', 'Force regenerate all posts')
+  .action((opts) => generateCommand({ force: opts.force }))
 
 program.parse()

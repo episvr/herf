@@ -3,4 +3,5 @@ dist/
 .claude/
 *.local
 *.tsbuildinfo
+.generate-cache.json
 .DS_Store
