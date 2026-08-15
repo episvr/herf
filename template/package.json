@@ -23,6 +23,7 @@
     "reveal.js": "^5.1.0"
   },
   "devDependencies": {
+    "@episvr/herf": "^0.0.1",
     "@types/katex": "^0.16.7",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

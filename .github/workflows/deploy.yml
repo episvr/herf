@@ -17,22 +17,22 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+          cache-dependency-path: template/package-lock.json
 
       - name: Install root dependencies
-        run: npm install
-
-      - name: Link herf CLI
-        run: npm link
+        run: npm ci
 
       - name: Install template dependencies
         working-directory: template
-        run: npm install
+        run: npm ci
 
       - name: Build site
         working-directory: template
@@ -52,6 +52,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
