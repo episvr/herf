@@ -1,188 +1,102 @@
 ---
-title: Welcome to herf
+title: Hello, Herf
 date: 2026-05-21
 category: intro
-tags: [demo, tutorial, features]
+tags: [hello, guide, demo]
 ---
 
-# Welcome to herf
+# Hello, Herf
 
-A terminal-style blog in your browser. Every post is a "file" you interact with using shell commands.
+Welcome to **herf**, a terminal-style blog for people who like their interfaces
+fast, focused, and a little nostalgic.
 
-## Why "herf"?
+This page is also a working example. Posts are plain Markdown files, but you
+read them through a small shell in your browser.
 
-Because I always type `href` as `herf`.
+## Start Here
 
-Every time I write an HTML link, my fingers refuse to spell it correctly. `<a herf="...">` — every single time. So instead of fighting it, I made it a feature.
-
-**herf** — the blog engine for developers who can't type `href`.
-
-## Quick Start
+Try these commands in the terminal:
 
 ```bash
-help            # show all commands
-ls              # list posts
-cat hello       # read this post
-grep math       # search content
-wc hello        # word count
+help              # show available commands
+ls                # list all posts
+cat hello-world   # read this post again
+grep herf         # search across posts
+pwd               # show the current location
+theme amber       # switch the terminal theme
 ```
 
+The command prompt is not decoration. It is the main way to explore the blog.
+
+## Write A Post
+
+Create a new post from your project directory:
+
+```bash
+herf new "My First Post"
+npm run dev
+```
+
+The new Markdown file lives in `src/data/posts/`. Edit it, save it, and the
+development server will show the changes immediately.
+
+Each post starts with frontmatter:
+
+```markdown
+---
+title: My First Post
+date: 2026-05-21
+category: notes
+tags: [web, ideas]
 ---
 
-## Markdown Features
+Write your story here.
+```
 
-### Text Formatting
+## Markdown, Without Limits
 
-**Bold text**, *italic text*, ~~strikethrough~~, `inline code`.
+Use the syntax you already know:
 
-> "The best interface is the one you already know."
-> — Every terminal user ever
+- **Bold**, *italic*, ~~strikethrough~~, and `inline code`
+- Tables, task lists, blockquotes, and links
+- Syntax-highlighted code blocks
+- LaTeX math with `$...$` and `$$...$$`
 
-### Task Lists
+For example, the quadratic formula is:
 
-- [x] Terminal UI with CRT effects
-- [x] Shell commands (ls, cat, grep, wc, sort)
-- [x] Markdown rendering
-- [x] LaTeX math support
-- [ ] World domination
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
 
----
-
-## Code Highlighting
-
-TypeScript with line numbers:
+And a small TypeScript example:
 
 ```typescript
-interface Post {
-  id: string
-  title: string
-  date: string
-  tags: string[]
-}
-
-async function getPost(id: string): Promise<Post | null> {
-  const response = await fetch(`/api/posts/${id}`)
-  if (!response.ok) return null
-  return response.json()
-}
+const greeting = 'Hello, Herf'
+console.log(greeting)
 ```
 
-Python:
+## Build And Share
 
-```python
-def fibonacci(n: int) -> list[int]:
-    """Generate Fibonacci sequence."""
-    fib = [0, 1]
-    for i in range(2, n):
-        fib.append(fib[i-1] + fib[i-2])
-    return fib[:n]
-
-print(fibonacci(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-```
-
-Rust:
-
-```rust
-fn main() {
-    let numbers: Vec<i32> = (1..=10).collect();
-    let sum: i32 = numbers.iter().sum();
-    println!("Sum of 1 to 10: {}", sum);
-}
-```
-
----
-
-## LaTeX Math
-
-Inline math: The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
-
-Euler's identity: $e^{i\pi} + 1 = 0$.
-
-Block math:
-
-$$
-\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-$$
-
-Matrix:
-
-$$
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-=
-\begin{pmatrix}
-ax + by \\
-cx + dy
-\end{pmatrix}
-$$
-
----
-
-## Tables
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `ls` | List posts | `ls` or `ls -la` |
-| `cat` | Read post | `cat hello` or `cat 1` |
-| `grep` | Search | `grep math` |
-| `wc` | Word count | `wc hello` |
-| `sort` | Sort posts | `sort date` |
-| `help` | Show help | `help` |
-
----
-
-## Embedded Content
-
-### PDF Slides
-
-Embed PDF files as interactive slideshows:
-
-[slides](/pdfs/demo.pdf)
-
-### File Cards
-
-Link to downloadable files:
-
-[asset:/pdfs/demo.pdf](Download Demo PDF)
-
-### GitHub Links
-
-Embed GitHub repository cards:
-
-[github:https://github.com/anthropics/claude-code](Claude Code)
-
----
-
-## Why herf?
-
-1. **Terminal Native** — If you can use a terminal, you can use this blog
-2. **Markdown First** — Write content in plain text, get beautiful output
-3. **Developer Friendly** — Code highlighting, math formulas, tables
-4. **Fast** — Built on Vite, instant hot reload
-5. **Hackable** — Open source, easy to customize
-6. **Named by Mistake** — Because `href` is hard to type
-
----
-
-## Get Started
+When the post is ready, generate the index and build a static site:
 
 ```bash
-# Create your first post
-herf new "My First Post"
-
-# Start the dev server
-npm run dev
-
-# Build for production
+herf generate
 npm run build
 ```
 
----
+The result is a fast static site that can be deployed to GitHub Pages or any
+static hosting service.
 
-*Built with React, Vite, and a typo.*
+## Why Herf?
+
+1. **Markdown first**: your content stays portable and readable.
+2. **Terminal native**: browse posts with familiar shell commands.
+3. **Developer friendly**: code, math, tables, and embedded assets included.
+4. **Easy to customize**: change the theme and config without a database.
+
+The name comes from a typo: `href` often became `herf`. Instead of fixing the
+typo, we made it the identity.
+
+Now type `ls` and explore the rest of the blog.
+
+*Built with React, Vite, and one persistent typo.*
